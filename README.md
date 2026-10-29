@@ -74,12 +74,23 @@ spawn_teammate_modeled({
 其余行为与 `spawn_teammate` 完全一致：成员进 roster、可 `send_message`、可 `interrupt_agent`、
 参与共享任务板。
 
+## 白名单：与「子智能体」设置页共用
+
+插件不另做配置界面，直接读 `subagent-model-selection-settings` 服务——
+也就是 **「子智能体」设置页里的那个开关和模型勾选列表**：
+
+- 页面里「允许 Agent 为子智能体选择模型」关闭时，本工具不做限制。
+- 打开时，只有被勾选的 provider/model 能用来创建成员，其余直接报错并列出可选清单。
+
+用户只在一个地方维护允许的模型。
+
 ## 配置
 
 | 字段 | 默认值 | 含义 |
 |---|---|---|
 | `freshProvider` | `spawn` | fresh 成员使用的子智能体提供方 |
 | `forkProvider` | `fork` | fork 成员使用的子智能体提供方 |
+| `enforceAllowedModels` | `true` | 是否跟随「子智能体」页面的模型白名单 |
 
 一般不需要改，除非你把 Agent Teams 的 `freshProvider` / `forkProvider` 换成了自定义提供方。
 
@@ -89,8 +100,8 @@ spawn_teammate_modeled({
   只会失效，不会损坏 DSH，删掉插件即恢复。
 - 创建之后再换模型仍然不行（宿主层封死），要换就重新建成员。
 - `fork` 成员换成和 Lead 不同的模型会让 KV 缓存失效，更慢更贵。
-- `spawn_teammate_modeled` 不检查 `subagent-model-selection-settings` 白名单，
-  它走的是另一条通道；需要限制范围请在你的提示词或工作区规则里约定。
+- 部分模型不接受 `developer` 角色消息（DSH 对新接口规范会用它替代 `system`），
+  例如 sophnet 的 `qwen3.8-flash` 会直接 400；同网关的 `glm-5.3-flash` 正常。
 
 ## 测试
 
