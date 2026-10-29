@@ -1,40 +1,44 @@
-{
-  "name": "dsh-team-model-router",
-  "version": "0.1.0",
-  "description": "Let Agent Teams teammates run on a model chosen at spawn time",
-  "keywords": [
-    "deepseek-harness",
-    "dsh",
-    "cordis",
-    "plugin",
-    "agent-team",
-    "subagent",
-    "model"
-  ],
-  "license": "MIT",
-  "type": "module",
-  "main": "lib/index.js",
-  "exports": {
-    ".": "./lib/index.js",
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "lib",
-    "README.md"
-  ],
-  "engines": {
-    "node": "^22.19.0 || >=24.0.0"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.5",
-    "@deepseek-ai/dsh-tools": "^0.2.1-rc.1"
-  },
-  "peerDependenciesMeta": {
-    "@deepseek-ai/cordis": {
-      "optional": true
-    },
-    "@deepseek-ai/dsh-tools": {
-      "optional": true
-    }
-  }
+﻿{
+    "name":  "dsh-team-model-router",
+    "version":  "0.1.0",
+    "description":  "Let Agent Teams teammates run on a model chosen at spawn time",
+    "keywords":  [
+                     "deepseek-harness",
+                     "dsh",
+                     "cordis",
+                     "plugin",
+                     "agent-team",
+                     "subagent",
+                     "model"
+                 ],
+    "license":  "MIT",
+    "type":  "module",
+    "main":  "lib/index.js",
+    "exports":  {
+                    ".":  "./lib/index.js",
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "lib",
+                  "README.md"
+              ],
+    "engines":  {
+                    "node":  "^22.19.0 || \u003e=24.0.0"
+                },
+    "peerDependencies":  {
+                             "@deepseek-ai/cordis":  "^4.0.5",
+                             "@deepseek-ai/dsh-tools":  "^0.2.1-rc.1",
+                             "@deepseek-ai/schemastery":  "^3.18.5"
+                         },
+    "peerDependenciesMeta":  {
+                                 "@deepseek-ai/cordis":  {
+                                                             "optional":  true
+                                                         },
+                                 "@deepseek-ai/dsh-tools":  {
+                                                                "optional":  true
+                                                            },
+                                 "@deepseek-ai/schemastery":  {
+                                                                  "optional":  true
+                                                              }
+                             }
 }
