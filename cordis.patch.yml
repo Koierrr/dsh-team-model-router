@@ -1,0 +1,5 @@
+# Mount the teammate model router as a profile layer.
+# Field defaults come from the plugin Config schema (settings page).
+- insert:
+    - id: team-model-router
+      name: dsh-team-model-router
