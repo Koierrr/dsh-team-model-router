@@ -1,6 +1,6 @@
 {
     "name":  "dsh-team-model-router",
-    "version":  "0.1.0",
+    "version":  "0.1.1",
     "description":  "Let Agent Teams teammates run on a model chosen at spawn time",
     "keywords":  [
                      "deepseek-harness",
@@ -46,5 +46,13 @@
                 "bundle":  {
                                "patch":  "./cordis.patch.yml"
                            }
-            }
+            },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/Koierrr/dsh-team-model-router.git"
+                   },
+    "homepage":  "https://github.com/Koierrr/dsh-team-model-router#readme",
+    "bugs":  {
+                 "url":  "https://github.com/Koierrr/dsh-team-model-router/issues"
+             }
 }
